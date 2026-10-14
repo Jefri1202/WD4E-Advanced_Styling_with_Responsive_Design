@@ -1,45 +1,130 @@
+
+/* Mobile-first styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    background-color: #dedede;
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  color: #222222;
+}
+
+header {
+  text-align: center;
 }
 
 h1 {
-    text-align: center;
-    font-family:Arial, sans-serif;
-    font-size: 32px;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-a {
-    color: #000;
-    text-decoration: none;
-    font-family:Arial, sans-serif;
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
-p {
-   font-size: 25px;
-   font-family:Arial, sans-serif;
+main > p {
+  line-height: 1.6;
 }
 
-img{
-  width:100%;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
-
-p{
-  text-align:center;
+figure {
+  margin: 0;
+  padding: 15px;
+  background-color: #ffffff;
+  color: #222222;
+  border: 3px solid #555555;
+  border-radius: 0;
+  text-align: center;
 }
 
-div img{
-    width:150px;
-    height: 150px;
-    display:block;
-    margin:auto;
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-div{
-  display: inline-block;
-  width: 24%;
-  margin: 5px;
-  padding: 2px;
+figcaption {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  padding: 15px;
+}
+
+footer a {
+  color: #0047ab;
+  font-weight: bold;
+}
+
+/* Tablet: 772px and wider */
+
+@media screen and (min-width: 772px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  figure {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  figure:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Large screens: 992px and wider */
+
+@media screen and (min-width: 992px) {
+  figure {
+    border-radius: 0;
+  }
+
+  figure:nth-child(3n) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Reduced motion preference */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark color scheme */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f5f5f5;
+  }
+
+  figure {
+    background-color: #222222;
+    color: #fff3a6;
+    border-color: #000000;
+  }
+
+  footer a {
+    color: #fff3a6;
+  }
 }
 
 
